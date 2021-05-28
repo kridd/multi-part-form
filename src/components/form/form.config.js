@@ -21,16 +21,19 @@ export const STAGES = [
     fields: {
       name: {
         label: "full name",
+        isRequired: true,
       },
       role: {
         label: "Job title",
       },
       email: {
         label: "Email address",
+        isRequired: true,
       },
       password: {
         label: "Password",
         type: "password",
+        isRequired: true,
         errorMessage:
           "Please make your password is super complicated. 1 uppercase, 1 lowercase letter. 1 number, 1 character. At least 8 chars long, please",
       },

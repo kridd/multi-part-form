@@ -10,23 +10,29 @@ import { useFormContext } from "react-hook-form";
 
 // NOTE: This RawField allows us to render a field without the need for the RHF setup.
 // This makes the component more flexible - and easier to test.
-export const RawField = ({ label, name, error, type, register, ...props }) => {
-  return (
-    <div className="p-2" {...props}>
-      <label className="block text-sm font-medium text-gray-700">
-        {label}
-        <input
-          {...register}
-          type={type || "text"}
-          className={`${error && "border-red-900"} ${
-            type === "checkbox" ? "mx-2 float-left" : "block w-full"
-          } border shadow-sm mt-1  sm:text-sm p-2`}
-        />
-      </label>
-      <p className="text-red-800 block">{error}</p>
-    </div>
-  );
-};
+export const RawField = ({
+  label,
+  name,
+  error,
+  type,
+  register,
+  isRequired,
+  ...props
+}) => (
+  <div className="p-2" {...props}>
+    <label className="block text-sm font-medium text-gray-700">
+      {label} {isRequired ? "*" : ""}
+      <input
+        {...register}
+        type={type || "text"}
+        className={`${error && "border-red-900"} ${
+          type === "checkbox" ? "mx-2 float-left" : "block w-full"
+        } border shadow-sm mt-1  sm:text-sm p-2`}
+      />
+    </label>
+    <p className="text-red-800 block">{error}</p>
+  </div>
+);
 
 export const Field = ({ name, ...props }) => {
   const { register } = useFormContext();
