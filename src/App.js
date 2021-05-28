@@ -6,7 +6,12 @@ import { Form } from "./components/form";
 import { Navigation } from "./components/navigation";
 import { SCHEMA, STAGES } from "./components/form/form.config";
 
-const SuccessMessage = () => <div>Thanks a lot ♥️</div>;
+const SuccessMessage = () => (
+  <p className="my-8 text-2xl">
+    <span class="block text-4xl">✅</span> Nailed it! Please check your emails
+    for confirmation.
+  </p>
+);
 
 const App = () => {
   const [stage, setStage] = useState("USER");
@@ -18,8 +23,12 @@ const App = () => {
   const { nextStage } = STAGES.find((item) => item.stage === stage) || {};
 
   const onSubmit = (data) => {
-    console.log("data", data);
     setStage(nextStage);
+    if (stage !== "REVIEW") {
+      return;
+    }
+
+    console.log({ data });
   };
 
   return (

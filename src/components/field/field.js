@@ -1,7 +1,14 @@
 import React from "react";
 import { useFormContext } from "react-hook-form";
 
-// This RawField allows us to render a field without the need for the RHF setup.
+// Enhancement:
+// We may want to be able to handle different input types differently.
+// For example, Checkbox / Radio groups may need different html, or styling.
+// In this case, we could split out new Raw[Checkbox | TextArea | etc] components.
+// Destructure the type prop and make a decision based on that.
+// I haven't done this here because of time limitations.
+
+// NOTE: This RawField allows us to render a field without the need for the RHF setup.
 // This makes the component more flexible - and easier to test.
 export const RawField = ({ label, name, error, type, register, ...props }) => {
   return (
@@ -11,9 +18,9 @@ export const RawField = ({ label, name, error, type, register, ...props }) => {
         <input
           {...register}
           type={type || "text"}
-          className={`${
-            error && "border-red-900"
-          } border col-span-2 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm rounded-md`}
+          className={`${error && "border-red-900"} ${
+            type === "checkbox" ? "mx-2 float-left" : "block w-full"
+          } border shadow-sm mt-1  sm:text-sm p-2`}
         />
       </label>
       <p className="text-red-800 block">{error}</p>

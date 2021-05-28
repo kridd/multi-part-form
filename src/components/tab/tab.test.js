@@ -17,6 +17,7 @@ describe("Components | Tab", () => {
 
     expect(tabElement).toBeInTheDocument();
     // TODO: This needs a little more thought than being directly tied to the className
+    // A snapshot may be more appropriate for this.
     expect(tabElement).toHaveClass("bg-red-900");
   });
 
