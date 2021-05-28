@@ -1,0 +1,22 @@
+{
+  "todohighlight.keywords": [
+    {
+      "text": "TODO:",
+      "isWholeLine": false,
+      "backgroundColor": "#41e637",
+      "color": "black"
+    },
+    {
+      "text": "REVIEW:",
+      "isWholeLine": false,
+      "backgroundColor": "#ffeb59",
+      "color": "black"
+    },
+    {
+      "text": "NOTE:",
+      "isWholeLine": false,
+      "backgroundColor": "#00ffff",
+      "color": "black"
+    }
+  ]
+}
