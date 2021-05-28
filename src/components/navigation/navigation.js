@@ -13,7 +13,7 @@ export const Navigation = ({ setStage, currentStage }) => {
     },
   } = useFormContext();
 
-  /* 🙈 I've bodged the USER tab for now to show as erroring whenever the form has an error
+  /* NOTE: 🙈 I've bodged the USER tab for now to show as erroring whenever the form has an error
     I can get away with this in this instance, because I know only the first screen will have an error
     But, in future we would need to find the stage the error exists within
   */

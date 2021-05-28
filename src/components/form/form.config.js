@@ -31,7 +31,8 @@ export const STAGES = [
       password: {
         label: "Password",
         type: "password",
-        errorMessage: "Please make your password is super complicated",
+        errorMessage:
+          "Please make your password is super complicated. 1 uppercase, 1 lowercase letter. 1 number, 1 character. At least 8 chars long, please",
       },
     },
   },
